@@ -1,0 +1,816 @@
+:root{
+    --colorDestaque: #bb820f;
+    --colorDestaqueVariante1: #bb820f3d;
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+header{
+    background-color: black;
+    height: 70px;
+    z-index: 999;
+    box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 50%);
+}
+header ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+header li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+header li a{
+    font-size: 1em;
+    color: white;
+    background: none;
+    border: none;
+    padding: 0px 20px;
+    cursor: pointer;
+    height: 70px;
+    width: 100%;
+    white-space: nowrap;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header li a:hover{
+    background-color: var(--colorDestaqueVariante1);
+}
+header li img{
+    height: 70px;
+    position: relative;
+}
+@keyframes estrelaHeader {
+    0%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+        width: 100%;
+
+    }
+    99%{
+        opacity: 0;
+        width: 0%;
+        z-index: 1;
+    }
+    100%{
+        width: 0%;
+        z-index: -1;
+
+    }
+}
+
+
+main{
+
+}
+main .cntrBanner{
+    background-color: rgba(0, 0, 0, 0.90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: calc(100vh - 80px);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+.cntrBanner img{
+    
+}
+.fundoHome{
+    z-index: -1;
+    width: 100%;
+}
+.logo{
+    width: 500px;
+    position: absolute;
+
+}
+.blurBranco{
+    width: 600px;
+    opacity: .2;
+    position: absolute;
+
+}
+.cntrBanner button{
+    position: absolute;
+    bottom: 40px;
+    right: 0px;
+    border: none;
+    border-radius: 50px 0px 0px 50px;
+    padding: 20px 40px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #3b3a39;
+    color: white;
+    cursor: pointer;
+}
+.destaqueOuro{
+    color: var(--colorDestaque);
+}
+.cntrEstilo{
+    background-color: black;
+}
+.cntrEstilo h1{
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 2em;
+}
+
+.cntrImgsTiposDeTatto{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: auto;
+}
+.boxTipoTattoo{
+    width: 100px;
+    min-width: 100px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.boxTipoTattoo img{
+    border-radius: 50%;
+    width: 100%;
+}
+.boxTipoTattoo p{
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: .9em;
+    margin-top: 10px;
+}
+.cntrTrabalhosBtnOrcamento{
+    padding: 10px 40px;
+    background-image: linear-gradient(180deg, black, #2a2929);
+    padding-bottom: 40px;
+    border-radius: 0px 0px 30px 30px;
+}
+.boxTrabalhos{
+    background-color: #393736;
+    border-radius: 30px;
+    color: white;
+    padding: 0px 10px;
+    margin-top: 40px;
+}
+.boxTrabalhos h1{
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+.boxTrabalhos h1 span{
+
+}
+.cntrImgTrabalhos{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #4f4f4f;
+}
+.cntrImgTrabalhos img{
+    width: 25%;
+}
+.boxTrabalhos button{
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    text-decoration: underline;
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+.boxTrabalhos button:hover{
+    color: #e99400;
+}
+.cntrBtnOrcamento{
+    position: relative;
+    margin-top: 60px;
+}
+.spanClaro{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e99400;
+    z-index: 1;
+    transform: rotate(-.8deg);
+    border-radius: 20px;
+
+}
+.spanEscuro{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #704600;
+    z-index: 1;
+    transform: rotate(.8deg);
+    border-radius: 20px;
+}
+.cntrBtnOrcamento button{
+    width: 100%;
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    background-color: #a46800;
+    border: none;
+    padding: 20px;
+    z-index: 2;
+    position: relative;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.cntrBtnOrcamento button:hover{
+    background-image: linear-gradient(-90deg, #704600, #e99400);
+}
+
+
+
+.cntrSobreNos{
+    color: white;
+    background-color: #292828;
+    margin: 30px;
+    margin-bottom: 0px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.cntrImgTextoSobreNos{
+    margin-top: 50px;
+}
+.sobreNosH1{
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+.cntrSobreNosSemH1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-right: 10px;
+    padding: 10px;
+}
+.cntrImgSobreNos{
+    position: relative;
+    margin: 20px;
+}
+.cntrImgSobreNos span{
+    border: 2px solid white;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+}
+.cntrImgSobreNos span:nth-child(1){
+    top: -10px;
+}
+.cntrImgSobreNos span:nth-child(2){
+    right: -10px;
+    bottom: -10px;
+}
+.cntrImgSobreNos span:nth-child(3){
+    left: -10px;
+    bottom: -10px;
+
+}
+
+
+.cntrImgSobreNos img{
+    border-radius: 50%;
+    position: relative;
+}
+.cntrImgSobreNos,
+.cntrImgSobreNos span:nth-child(1),
+.cntrImgSobreNos span:nth-child(2),
+.cntrImgSobreNos span:nth-child(3),
+.cntrImgSobreNos img{
+    width: 300px;
+    height: 300px;
+}
+
+.cntrTextoSobreNos{
+    padding: 10px;
+    width: 50%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.cntrTextoSobreNos h1{
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+.cntrTextoSobreNos p{
+    font-size: 1em;
+    line-height: 24px;
+}
+
+.cntrContatoInfos{
+    color: white;
+    margin-bottom: 40px;
+}
+.cntrContatoInfos > h1{
+    width: 100%;
+    text-align: center;
+    margin: 0px 0px 40px 0px;
+    padding-top: 60px;
+}
+.cntrContatoInfos > div{
+    display: flex;
+    color: #ccc;
+    justify-content: space-evenly;
+}
+.cntrHrFuncionamento{
+    width: 50%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cntrHrFuncionamento h2{
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.cntrHorarios{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cntrHorarios p{
+    width: 50%;
+    margin-top: 10px;
+}
+.cntrHorarios p:last-child{
+    color: var(--colorDestaque);
+}
+.horario{
+    text-align: end;
+}
+.cntrContato{
+    width: 50%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cntrContato h2{
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.cntrContato a{
+    width: 80%;
+}
+.cntrContato button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 16px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #2a2929;
+}
+
+
+.cntrMapa{
+    margin: 30px;
+    margin-top: 0px;
+    padding: 20px;
+    background-color: #292828;
+    border-radius: 0px 0px 20px 20px;
+}
+.cntrMapa >  span{
+    width: 100%;
+    display: flex;
+}
+.cntrMapa > div{
+    width: 500px;
+    height: 500px;
+    min-width: 500px;
+}
+.cntrMapa img{
+    height: 500px;
+    border-radius: 20px 0px 0px 20px;
+}
+.cntrMapa iframe{
+    width: 100%;
+    height: 500px;
+    border-radius: 0px 20px 20px 0px;
+    background-color: black;
+}
+
+.cntrMapa p{
+    color: white;
+    margin-top: 10px;
+    line-height: 24px;
+}
+.cntrMapa p a{
+    color: blue;
+    margin-left: 10px;
+}
+.enderecoLateral{
+    display: none;
+}
+
+.depoimentosH1{
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+}
+.cntrDepoimento{
+    display: flex;
+    overflow-x: scroll;
+}
+.cntrDepoimento::-webkit-scrollbar{
+    height: 0px;
+}
+
+.boxDepoimento{
+    background-color: #999;
+    margin: 50px 30px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 40%;
+    min-width: 500px;
+    border-radius: 20px;
+}
+.cntrNomeEavaliacao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.cntrNomeInstaDepoimento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    background-color: #bbb;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.cntrNomeInstaDepoimento:hover{
+    background-color: #ccc;
+}
+.nomeInstaDepoimento{
+    font-size: 1em;
+    font-weight: bold;
+    color: #292828;
+}
+.cntrNomeInstaDepoimento a{
+    
+}
+.cntrNomeInstaDepoimento svg{
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 10px;
+
+}
+.boxDepoimento a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.cntrEstrelasDepoimento{
+    display: flex;
+    align-items: center;
+}
+.cntrEstrelasDepoimento svg{
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+}
+.cntrEstrelasDepoimento svg path{
+    fill: #fff;
+}
+.textDepoimento{
+    font-size: 1em;
+    line-height: 24px;
+}
+
+.cntrBtnsImgDepoimento{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+.cntrBtnsImgDepoimento p{
+    color: #ccc;
+    font-size: .8em;
+    opacity: .3;
+
+}
+.cntrBtnsImgDepoimento button{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.cntrBtnsImgDepoimento svg{
+    width: 60px;
+    height: 60px;
+    opacity: .3;
+}
+
+
+footer{
+    background-color: #292828;
+    color: rgba(204, 204, 204, 0.7);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 100% 100% 0px 0px;
+    margin-top: 100px;
+    font-size: .8em;
+    position: relative;
+}
+.borboleta{
+    position: absolute;
+    width: 500px;
+    bottom: 0px;
+    z-index: -1;
+    right: 0px;
+    opacity: .1;
+}
+.comentarios{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.addComentario{
+    color: #ccc;
+    text-align: center;
+    margin-top: 10px;
+}
+.comentarios > span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .boxDepoimento {
+        width: 30%;
+        min-width: fit-content;
+    }
+}
+@media only screen and (max-width: 980px) {
+    .cntrImgsTiposDeTatto {
+        flex-wrap: wrap;
+        width: 90%;
+    }
+    .boxTipoTattoo {
+        width: 130px;
+        min-width: 100px;
+    }
+    .boxTipoTattoo img {
+        width: 80%;
+    }
+    .boxTrabalhos h1, .cntrBtnOrcamento button {
+        font-size: 1.6em;
+    }
+    .boxTrabalhos button {
+        font-size: 1.3em;
+    }
+
+}
+@media only screen and (max-width: 920px) {
+    .enderecoAbaixo{
+        display: none;
+    }
+    .enderecoLateral{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cntrMapa > span {
+        flex-direction: column;
+    }
+    .cntrMapa span div{
+        display: flex;
+        background-color: #292828;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .cntrMapa img {
+        height: 300px;
+        border-radius: 20px 0px 0px 0px;
+    }
+    .cntrMapa iframe {
+        border-radius: 0px 0px 20px 20px;
+    }
+    .cntrMapa p {
+        margin-top: 0px;
+        padding: 24px;
+    }
+    .cntrMapa iframe {
+        height: 350px;
+    }
+
+}
+@media only screen and (max-width: 900px) {
+    .cntrBanner button {
+        bottom: 20px;
+        border-radius: 50px 0px 0px 50px;
+        padding: 14px 20px;
+    }
+    .logo {
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .boxTipoTattoo {
+        width: 120px;
+        min-width: 100px;
+    }
+    .cntrImgTrabalhos img {
+        width: 33.33%;
+    }
+    .cntrImgSobreNos, .cntrImgSobreNos span:nth-child(1), .cntrImgSobreNos span:nth-child(2), .cntrImgSobreNos span:nth-child(3), .cntrImgSobreNos img {
+        width: 200px;
+        height: 200px;
+    }
+    .sobreNosH1{
+        display: block;
+    }
+    .cntrTextoSobreNos h1 {
+        display: none;
+    }
+    .cntrTextoSobreNos {
+        padding: 10px;
+        width: 100%;
+        height: 200px;
+    }
+    .cntrSobreNos {
+        margin: 30px 10px;
+        margin-bottom: 0px;
+    }
+    .cntrMapa {
+        margin: 30px 10px;
+        margin-top: 0px;
+        padding: 10px;
+    }
+    .boxDepoimento {
+        margin: 50px 20px;
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .cntrEstilo h1 {
+        font-size: 1.6em;
+    }
+    .boxTrabalhos h1 {
+        padding: 20px;
+        font-size: 1.5em;
+    }
+}
+@media only screen and (max-width: 794px) {
+    .boxTipoTattoo {
+        width: 100px;
+        min-width: 100px;
+    }
+    .cntrImgsTiposDeTatto {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .cntrBanner button {
+        display: none;
+    }
+    .cntrSobreNosSemH1 {
+        flex-direction: column;
+    }
+    .cntrTextoSobreNos {
+        height: fit-content;
+    }
+    .cntrContato {
+        width: 40%;
+    }
+    .cntrHrFuncionamento{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    header li button{
+        font-size: .9em;
+        padding: 10px 20px;
+    }
+    .cntrTrabalhosBtnOrcamento {
+        padding: 10px 20px;
+        padding-bottom: 20px;
+    }
+    .cntrBtnOrcamento button {
+        font-size: 1.4em;
+    }
+    .cntrBtnOrcamento {
+        margin-top: 30px;
+    }
+    .cntrMapa img {
+        height: fit-content;
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .cntrMapa span div {
+        flex-direction: column;
+    }
+
+    
+}
+@media only screen and (max-width: 620px) {
+    .cntrImgsTiposDeTatto {
+        width: 98%;
+    }
+    .boxTipoTattoo {
+        width: 25%;
+        min-width: 50px;
+        padding: 10px;
+        margin: 0px;
+    }
+
+
+}
+@media only screen and (max-width: 600px) {
+    .liImg{
+        animation: estrelaHeader 1s both;
+    }
+    .cntrEstilo h1 {
+        font-size: 1.3em;
+    }
+    .logo {
+        width: 300px;
+    }
+    .cntrBtnOrcamento button, .boxTrabalhos button{
+        font-size: 1em;
+    }
+    .boxTrabalhos h1 {
+        font-size: 1.2em;
+    }
+    .cntrContatoInfos > div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cntrHrFuncionamento{
+        width: 100%;
+        max-width: 80%;
+        margin-bottom: 60px;
+    }
+    .cntrContato button {
+        width: 100%;
+    }
+    .cntrContato {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .logo {
+        width: 250px;
+    }
+}
+  
+

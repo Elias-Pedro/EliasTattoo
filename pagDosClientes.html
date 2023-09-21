@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeisiTattoo - Comentário</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        html{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(10, 10, 10);
+        }
+        header{
+            width: 500px;
+            padding: 0px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header h1{
+            
+        }
+        header p{
+            line-height: 22px;
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 10px 0px 10px;
+            width: 500px;
+            align-items: flex-end;   
+        }
+        form > span{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+        }
+        form span div{
+            width: 50%;
+        }
+        .bntEstrela {
+            width: 50%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+            border: 1px solid white;
+            margin-left: 10px;
+        }
+
+        .bntEstrela svg{
+            width: 20px;
+            height: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        .bntEstrela svg path{
+            fill: white;
+        }
+        .bntEstrela > span{
+            display: flex;
+        }
+        .bntEstrela > div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bntEstrela > div p{
+            margin: 0px;
+            font-size: .8em;
+            color: #ffffff4d;
+        }
+        .cntrInputInsta{
+            height: 60px;
+            padding: 0px 12px;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+        .cntrInputInsta input{
+            width: 100%;
+            border: none;
+            outline: none;
+
+        }
+        input, textarea{
+            background: none;
+            color: white;
+        }
+        .cntrInputInsta svg{
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+        }
+        .cntrInputInsta path , .cntrInputInsta circle{
+            fill: #999;
+        }
+        textarea{
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0px;
+            border: 1px solid white;
+            width: calc(100% - 22px);
+        }
+        #submit{
+            padding: 10px 40px;
+            width: fit-content;
+            font-size: .9em;
+            border: 1px solid white;
+            border-radius: 10px;
+
+        }
+        .sucess, .erro{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sucess a, .erro a{
+            text-decoration: none;
+        }
+        .sucess button, .erro button{
+            margin-top: 20px;
+            font-size: 0.8em;
+            border-radius: 50px;
+            border: 1px solid #ffffff4d;
+            color: #ffffff4d;
+            background: none;
+            padding: 8px 20px;
+            cursor: pointer;
+        }
+        .borboleta1{
+            position: absolute; 
+            left: 0px;  
+            transform: scaleX(-1);
+            opacity: .1;
+            z-index: -1;
+        }
+        .borboleta2{
+            position: absolute;  
+            right: 0px; 
+            opacity: .1;
+            z-index: -1;
+        }
+        .conteudo{
+            background-color: rgba(10, 10, 10, 0.9);
+            box-shadow: 0px 0px 50px 50px rgba(10, 10, 10, 0.9);
+            padding: 10px 0px;
+        }
+
+        @media only screen and (max-width: 650px) {
+            .borboleta1,.borboleta2{
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 550px) {
+            header, form{
+                width: 100%;
+                padding: 0px;
+            }
+            .conteudo {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <img class="borboleta borboleta1" src="img/borboleta.png" alt="">
+    <img class="borboleta borboleta2" src="img/borboleta.png" alt="">
+
+    <div class="sucess">
+        <p>Obrigado pelo comentário 😍🥰</p>
+        <a href="index.html"><button>Voltar</button></a>
+    </div>
+    <div class="erro">
+        <p>Erro ao enviar comentário</p>
+        <a href="pagDosClientes.html"><button>Tentar novamente</button></a>
+    </div>
+
+    <div class="conteudo">
+        <header>
+            <h1>Heisi Tattoo</h1>
+            <p>Olá querido cliente, esse é um espaço para você dizer sua experiência com a HeisiTattoo.</p>
+            <p>O que achou do meu trabalho?</p>
+        </header>
+        
+        <main>
+            <form id="meuFormulario" action="https://api.staticforms.xyz/submit" method="post">
+                <input type="hidden" name="accessKey" value="f8545cbe-6343-40e6-ab5d-705d825494cf">
+                <span>
+                    <div class="cntrInputInsta">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 551.034 551.034" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><linearGradient id="a" x1="275.517" x2="275.517" y1="4.57" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)" gradientUnits="userSpaceOnUse"><stop stop-opacity="1" stop-color="#42445a" offset="0"></stop><stop stop-opacity="1" stop-color="#42445a" offset="0.6"></stop><stop stop-opacity="1" stop-color="#42445a" offset="1"></stop><stop stop-opacity="1" stop-color="#292828" offset="1"></stop></linearGradient><path d="M386.878 0H164.156C73.64 0 0 73.64 0 164.156v222.722c0 90.516 73.64 164.156 164.156 164.156h222.722c90.516 0 164.156-73.64 164.156-164.156V164.156C551.033 73.64 477.393 0 386.878 0zM495.6 386.878c0 60.045-48.677 108.722-108.722 108.722H164.156c-60.045 0-108.722-48.677-108.722-108.722V164.156c0-60.046 48.677-108.722 108.722-108.722h222.722c60.045 0 108.722 48.676 108.722 108.722v222.722z"></path><linearGradient id="b" x1="275.517" x2="275.517" y1="4.57" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)" gradientUnits="userSpaceOnUse"><stop stop-opacity="1" stop-color="#42445a" offset="0"></stop><stop stop-opacity="1" stop-color="#42445a" offset="0.6"></stop><stop stop-opacity="1" stop-color="#42445a" offset="1"></stop><stop stop-opacity="1" stop-color="#292828" offset="1"></stop></linearGradient><path d="M275.517 133C196.933 133 133 196.933 133 275.516s63.933 142.517 142.517 142.517S418.034 354.1 418.034 275.516 354.101 133 275.517 133zm0 229.6c-48.095 0-87.083-38.988-87.083-87.083s38.989-87.083 87.083-87.083c48.095 0 87.083 38.988 87.083 87.083 0 48.094-38.989 87.083-87.083 87.083z"></path><linearGradient id="c" x1="418.31" x2="418.31" y1="4.57" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)" gradientUnits="userSpaceOnUse"><stop stop-opacity="1" stop-color="#42445a" offset="0"></stop><stop stop-opacity="1" stop-color="#42445a" offset="0.6"></stop><stop stop-opacity="1" stop-color="#42445a" offset="1"></stop><stop stop-opacity="1" stop-color="#292828" offset="1"></stop></linearGradient><circle cx="418.31" cy="134.07" r="34.15"></circle></g></svg>
+                        <input type="text" name="$Instagram" id="nome" placeholder="Link do seu Instagram">
+                    </div>
+                    <div class="bntEstrela">
+                        <span>
+                            <svg onclick="btnAvaliacao(1)" xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='512' height='512' x='0' y='0' viewBox='0 0 511.987 511' style='enable-background:new 0 0 512 512' xml:space='preserve' ><g><path class="estrela" fill='#ffc107' d='M510.652 185.902a27.158 27.158 0 0 0-23.425-18.71l-147.774-13.419-58.433-136.77C276.71 6.98 266.898.494 255.996.494s-20.715 6.487-25.023 16.534l-58.434 136.746-147.797 13.418A27.208 27.208 0 0 0 1.34 185.902c-3.371 10.368-.258 21.739 7.957 28.907l111.7 97.96-32.938 145.09c-2.41 10.668 1.73 21.696 10.582 28.094 4.757 3.438 10.324 5.188 15.937 5.188 4.84 0 9.64-1.305 13.95-3.883l127.468-76.184 127.422 76.184c9.324 5.61 21.078 5.097 29.91-1.305a27.223 27.223 0 0 0 10.582-28.094l-32.937-145.09 111.699-97.94a27.224 27.224 0 0 0 7.98-28.927zm0 0' data-original='#ffc107' ></path></g></svg>
+                            <svg onclick="btnAvaliacao(2)" xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='512' height='512' x='0' y='0' viewBox='0 0 511.987 511' style='enable-background:new 0 0 512 512' xml:space='preserve' ><g><path class="estrela" fill='#ffc107' d='M510.652 185.902a27.158 27.158 0 0 0-23.425-18.71l-147.774-13.419-58.433-136.77C276.71 6.98 266.898.494 255.996.494s-20.715 6.487-25.023 16.534l-58.434 136.746-147.797 13.418A27.208 27.208 0 0 0 1.34 185.902c-3.371 10.368-.258 21.739 7.957 28.907l111.7 97.96-32.938 145.09c-2.41 10.668 1.73 21.696 10.582 28.094 4.757 3.438 10.324 5.188 15.937 5.188 4.84 0 9.64-1.305 13.95-3.883l127.468-76.184 127.422 76.184c9.324 5.61 21.078 5.097 29.91-1.305a27.223 27.223 0 0 0 10.582-28.094l-32.937-145.09 111.699-97.94a27.224 27.224 0 0 0 7.98-28.927zm0 0' data-original='#ffc107' ></path></g></svg>
+                            <svg onclick="btnAvaliacao(3)" xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='512' height='512' x='0' y='0' viewBox='0 0 511.987 511' style='enable-background:new 0 0 512 512' xml:space='preserve' ><g><path class="estrela" fill='#ffc107' d='M510.652 185.902a27.158 27.158 0 0 0-23.425-18.71l-147.774-13.419-58.433-136.77C276.71 6.98 266.898.494 255.996.494s-20.715 6.487-25.023 16.534l-58.434 136.746-147.797 13.418A27.208 27.208 0 0 0 1.34 185.902c-3.371 10.368-.258 21.739 7.957 28.907l111.7 97.96-32.938 145.09c-2.41 10.668 1.73 21.696 10.582 28.094 4.757 3.438 10.324 5.188 15.937 5.188 4.84 0 9.64-1.305 13.95-3.883l127.468-76.184 127.422 76.184c9.324 5.61 21.078 5.097 29.91-1.305a27.223 27.223 0 0 0 10.582-28.094l-32.937-145.09 111.699-97.94a27.224 27.224 0 0 0 7.98-28.927zm0 0' data-original='#ffc107' ></path></g></svg>
+                            <svg onclick="btnAvaliacao(4)" xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='512' height='512' x='0' y='0' viewBox='0 0 511.987 511' style='enable-background:new 0 0 512 512' xml:space='preserve' ><g><path class="estrela" fill='#ffc107' d='M510.652 185.902a27.158 27.158 0 0 0-23.425-18.71l-147.774-13.419-58.433-136.77C276.71 6.98 266.898.494 255.996.494s-20.715 6.487-25.023 16.534l-58.434 136.746-147.797 13.418A27.208 27.208 0 0 0 1.34 185.902c-3.371 10.368-.258 21.739 7.957 28.907l111.7 97.96-32.938 145.09c-2.41 10.668 1.73 21.696 10.582 28.094 4.757 3.438 10.324 5.188 15.937 5.188 4.84 0 9.64-1.305 13.95-3.883l127.468-76.184 127.422 76.184c9.324 5.61 21.078 5.097 29.91-1.305a27.223 27.223 0 0 0 10.582-28.094l-32.937-145.09 111.699-97.94a27.224 27.224 0 0 0 7.98-28.927zm0 0' data-original='#ffc107' ></path></g></svg>
+                            <svg onclick="btnAvaliacao(5)" xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='512' height='512' x='0' y='0' viewBox='0 0 511.987 511' style='enable-background:new 0 0 512 512' xml:space='preserve' ><g><path class="estrela" fill='#ffc107' d='M510.652 185.902a27.158 27.158 0 0 0-23.425-18.71l-147.774-13.419-58.433-136.77C276.71 6.98 266.898.494 255.996.494s-20.715 6.487-25.023 16.534l-58.434 136.746-147.797 13.418A27.208 27.208 0 0 0 1.34 185.902c-3.371 10.368-.258 21.739 7.957 28.907l111.7 97.96-32.938 145.09c-2.41 10.668 1.73 21.696 10.582 28.094 4.757 3.438 10.324 5.188 15.937 5.188 4.84 0 9.64-1.305 13.95-3.883l127.468-76.184 127.422 76.184c9.324 5.61 21.078 5.097 29.91-1.305a27.223 27.223 0 0 0 10.582-28.094l-32.937-145.09 111.699-97.94a27.224 27.224 0 0 0 7.98-28.927zm0 0' data-original='#ffc107' ></path></g></svg>
+                        </span>
+                        <div>
+                            <input type="hidden" name="$Nota" id="assunto">
+                            <p id="textAvaliacao">---</p>
+                        </div>
+                    </div>
+                </span>
+                <textarea name="$comentario" id="comentario" cols="30" placeholder="Digite seu comentário aqui" rows="10"></textarea>
+                <input type="hidden" name="$html-Copy" id="message">
+                <input type="submit" id="submit" value="Enviar">
+            </form>
+        
+        </main>
+    </div>
+
+    <script>
+        let nameInput = document.getElementById('nome');
+        let subjectInput = document.getElementById('assunto');
+        let messageInput = document.getElementById('comentario');
+        let bntSubmit = document.getElementById('submit');
+        let message = document.getElementById('message');
+        let linkPerfil = ''
+
+        function compiladorDeInfos(){
+            message.value = "<input id=&quot;htmlCopy&quot; value='" + "&lt;div class=&quot;boxDepoimento&quot;&gt;&lt;div class=&quot;cntrNomeEavaliacao&quot;&gt;&lt;div class=&quot;cntrNomeInstaDepoimento&quot;&gt;&lt;a href=&quot;"+linkPerfil+"&quot; target=&quot;_blank&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:svgjs=&quot;http://svgjs.com/svgjs&quot; width=&quot;512&quot; height=&quot;512&quot; x=&quot;0&quot; y=&quot;0&quot; viewBox=&quot;0 0 551.034 551.034&quot; style=&quot;enable-background:new 0 0 512 512&quot; xml:space=&quot;preserve&quot; class=&quot;&quot;&gt;&lt;g&gt;&lt;linearGradient id=&quot;a&quot; x1=&quot;275.517&quot; x2=&quot;275.517&quot; y1=&quot;4.57&quot; y2=&quot;549.72&quot; gradientTransform=&quot;matrix(1 0 0 -1 0 554)&quot; gradientUnits=&quot;userSpaceOnUse&quot;&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;0.6&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#292828&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;&lt;/linearGradient&gt;&lt;path d=&quot;M386.878 0H164.156C73.64 0 0 73.64 0 164.156v222.722c0 90.516 73.64 164.156 164.156 164.156h222.722c90.516 0 164.156-73.64 164.156-164.156V164.156C551.033 73.64 477.393 0 386.878 0zM495.6 386.878c0 60.045-48.677 108.722-108.722 108.722H164.156c-60.045 0-108.722-48.677-108.722-108.722V164.156c0-60.046 48.677-108.722 108.722-108.722h222.722c60.045 0 108.722 48.676 108.722 108.722v222.722z&quot; style=&quot;fill:url(#a);&quot; fill=&quot;&quot;&gt;&lt;/path&gt;&lt;linearGradient id=&quot;b&quot; x1=&quot;275.517&quot; x2=&quot;275.517&quot; y1=&quot;4.57&quot; y2=&quot;549.72&quot; gradientTransform=&quot;matrix(1 0 0 -1 0 554)&quot; gradientUnits=&quot;userSpaceOnUse&quot;&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;0.6&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#292828&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;&lt;/linearGradient&gt;&lt;path d=&quot;M275.517 133C196.933 133 133 196.933 133 275.516s63.933 142.517 142.517 142.517S418.034 354.1 418.034 275.516 354.101 133 275.517 133zm0 229.6c-48.095 0-87.083-38.988-87.083-87.083s38.989-87.083 87.083-87.083c48.095 0 87.083 38.988 87.083 87.083 0 48.094-38.989 87.083-87.083 87.083z&quot; style=&quot;fill:url(#b);&quot; fill=&quot;&quot;&gt;&lt;/path&gt;&lt;linearGradient id=&quot;c&quot; x1=&quot;418.31&quot; x2=&quot;418.31&quot; y1=&quot;4.57&quot; y2=&quot;549.72&quot; gradientTransform=&quot;matrix(1 0 0 -1 0 554)&quot; gradientUnits=&quot;userSpaceOnUse&quot;&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;0.6&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#42445a&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;&lt;stop stop-opacity=&quot;1&quot; stop-color=&quot;#292828&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;&lt;/linearGradient&gt;&lt;circle cx=&quot;418.31&quot; cy=&quot;134.07&quot; r=&quot;34.15&quot; style=&quot;fill:url(#c);&quot; fill=&quot;&quot;&gt;&lt;/circle&gt;&lt;/g&gt;&lt;/svg&gt;&lt;p class=&quot;nomeInstaDepoimento&quot;&gt;"+nameInput.value+"&lt;/p&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;cntrEstrelasDepoimento "+subjectInput.value+"&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=&quot;textDepoimento&quot;&gt;"+messageInput.value+"&lt;/p&gt;&lt;/div&gt;" + "'>" + "<button id=&quot;btnHtmlCopy&quot; onclick=&quot;copiarTexto()&quot;>Copiar HTML</button><script>function copiarTexto() &#123;let btnHtmlCopy = document.getElementById(&quot;btnHtmlCopy&quot;);var input = document.getElementById(&quot;inputTexto&quot;);input.select();input.setSelectionRange(0, 99999);document.execCommand(&quot;copy&quot;);btnHtmlCopy.innerHTML = &quot;Copiado&quot;;&#125;&lt;/script>"
+        }
+        
+
+        // Função para enviar o formulário sem atualizar a página
+        function enviarFormulario(event) {
+            
+            compiladorDeInfos()
+
+            event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+
+            // Obtém os dados do formulário
+            var form = document.getElementById('meuFormulario');
+            var formData = new FormData(form);
+
+
+            var isValid = true; // Variável para verificar se o formulário é válido
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            // Verificar se o campo de nome está vazio
+            if (nameInput.value.trim() === '') {
+                document.querySelector('.cntrInputInsta').style.border = "1px solid red"
+            }
+            else {
+                nameInput.style.border = "none"
+                // Verificar se o campo de assunto está vazio
+                if (subjectInput.value.trim() === '') {
+                    document.querySelector('.bntEstrela').style.border = "1px solid red"
+                }
+                else {
+                    subjectInput.style.border = "none"
+
+                    // Verificar se o campo de mensagem está vazio
+                    if (messageInput.value.trim() === '') {
+                        messageInput.style.border = "1px solid red"
+                    }
+                    else {
+                        messageInput.style.border = "none"
+                        // Converte o objeto FormData para um objeto JSON
+                        var jsonData = {};
+                        for (var pair of formData.entries()) {
+                            jsonData[pair[0]] = pair[1];
+                        }
+
+                        // Envia a requisição usando AJAX
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('POST', form.action, true);
+                        xhr.setRequestHeader('Content-Type', 'application/json');
+
+
+                        document.querySelector(".conteudo").style.display = "none"
+                        document.querySelector(".borboleta1").style.display = "none"
+                        document.querySelector(".borboleta2").style.display = "none"
+                        
+
+                        xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            // O formulário foi enviado com sucesso
+                            nameInput.value = ''
+                            subjectInput.value = ''
+                            messageInput.value = ''
+
+                            document.querySelector(".sucess").style.display = "flex"
+                            document.querySelector(".erro").style.display = "none"
+
+                        }else{
+                            // O formulário não foi enviado
+                            document.querySelector(".sucess").style.display = "none"
+                            document.querySelector(".erro").style.display = "flex"
+                        }
+                        };
+                        xhr.send(JSON.stringify(jsonData));
+                    }
+                }
+            }
+        }
+    
+
+        // Evento de clique no botão de envio do formulário
+        var submitButton = document.getElementById('submit');
+        submitButton.addEventListener('click', enviarFormulario);
+
+        let textAvaliacao = document.getElementById('textAvaliacao')
+        let inputAvaliaca = document.getElementById('assunto')
+
+        let estrela = document.querySelectorAll(".estrela")
+        for (let i = 0; i < estrela.length; i++) {
+            estrela[i].style.fill = "#ffffff4d"
+        }
+
+        function btnAvaliacao(nota){
+            if (nota < 1) {
+                textAvaliacao.innerHTML = "---"
+                for (let i = 0; i < estrela.length; i++) {
+                    estrela[i].style.fill = "#ffffff4d"
+                }
+                inputAvaliaca.value = null
+            }
+            else if(nota == 1){
+                textAvaliacao.innerHTML = "Péssimo"
+                inputAvaliaca.value = "umaEstrela"
+                for (let i = 0; i < estrela.length; i++) {
+                    estrela[i].style.fill = "#ffffff4d"
+                }
+                for (let i = 0; i < estrela.length-4; i++) {
+                    estrela[i].style.fill = "white"
+                }
+            }
+            else if(nota == 2){
+                textAvaliacao.innerHTML = "Ruim"
+                inputAvaliaca.value = "duasEstrelas"
+                for (let i = 0; i < estrela.length; i++) {
+                    estrela[i].style.fill = "#ffffff4d"
+                }
+                for (let i = 0; i < estrela.length-3; i++) {
+                    estrela[i].style.fill = "white"
+                }
+            }
+            else if(nota == 3){
+                textAvaliacao.innerHTML = "Mais ou menos"
+                inputAvaliaca.value = "tresEstrelas"
+                for (let i = 0; i < estrela.length; i++) {
+                    estrela[i].style.fill = "#ffffff4d"
+                }
+                for (let i = 0; i < estrela.length-2; i++) {
+                    estrela[i].style.fill = "white"
+                }
+
+            }
+            else if(nota == 4){
+                textAvaliacao.innerHTML = "Bom"
+                inputAvaliaca.value = "quatroEstrelas"
+
+                for (let i = 0; i < estrela.length; i++) {
+                    estrela[i].style.fill = "#ffffff4d"
+                }
+                for (let i = 0; i < estrela.length-1; i++) {
+                    estrela[i].style.fill = "white"
+                }
+            }
+            else if(nota == 5){
+                textAvaliacao.innerHTML = "Ótimo"
+                inputAvaliaca.value = "cincoEstrelas"
+                for (let i = 0; i < estrela.length; i++) {
+                    estrela[i].style.fill = "white"
+                }
+            }
+
+        }
+
+
+        // Função para extrair o nome de usuário do link do Instagram
+        function extrairNomeUsuarioInstagram(link) {
+            linkPerfil = nameInput.value;
+            const regex = /instagram\.com\/([A-Za-z0-9_.]+)/;
+            const matches = link.match(regex);
+
+            if (matches && matches.length > 1) {
+                document.querySelector(".cntrInputInsta").style.borderColor = "white"
+                return matches[1];
+            }
+
+            return usuarioInvalido(); // Retorna null se não encontrar um nome de usuário válido
+        }
+        function usuarioInvalido(){
+            nameInput.value = "";
+            document.querySelector(".cntrInputInsta").style.borderColor = "red"
+        }
+        // Função para atualizar o valor do input quando ele perder o foco
+        function atualizarValorDoInput() {
+
+            const instaInput = document.getElementById("nome");
+            const link = instaInput.value;
+            const nomeUsuario = extrairNomeUsuarioInstagram(link);
+
+
+            if (nomeUsuario) {
+                instaInput.value = "@" + nomeUsuario;
+            }
+        }
+
+        // Adiciona o evento blur ao input
+        const instaInput = document.getElementById("nome");
+        instaInput.addEventListener("blur", atualizarValorDoInput);
+
+    </script>
+</body>
+</html>
